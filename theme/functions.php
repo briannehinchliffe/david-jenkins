@@ -108,6 +108,14 @@ if ( ! function_exists( 'david_jenkins_setup' ) ) :
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
+		// Enable the logo in the Customizer.
+		add_theme_support( 'custom-logo', array(
+			'height'      => 250,
+			'width'       => 250,
+			'flex-width'  => true,
+			'flex-height' => true,
+		) );
+
 		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
 
