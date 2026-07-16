@@ -37,7 +37,7 @@
 				<?php endif; ?>
 			</div>
 			<div>
-				<h4 class="text-white font-semibold text-sm tracking-widest uppercase mb-4">Contact</h4>
+				<h4 class="text-white font-semibold text-sm tracking-widest uppercase mb-4"><?php esc_html_e( 'Contact', 'david-jenkins' ); ?></h4>
 				<div class="space-y-3">
 					<div class="flex items-center gap-2 text-blue-200 text-sm"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook text-blue-400 flex-shrink-0"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg><a href="https://www.facebook.com/DavidJenkins4CheshireCountyAttorney" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">DavidJenkins4CheshireCountyAttorney</a>
 					</div>
