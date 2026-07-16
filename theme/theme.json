@@ -440,7 +440,7 @@
 				},
 				"border": {
 					"left": {
-						"color": "var(--wp--custom--color--primary)",
+						"color": "var(--wp--preset--color--primary)",
 						"width": "4px",
 						"style": "solid"
 					}
