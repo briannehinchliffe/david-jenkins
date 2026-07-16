@@ -447,8 +447,9 @@
 			},
 			"core/code": {
 				"color": {
-					"text": "var(--wp--custom--color--primary)"
+					"text": "var(--wp--preset--color--primary)"
 				}
+			}
 			},
 			"core/post-author": {
 				"typography": {
