@@ -21,7 +21,7 @@
 				</a>
 			</div>
 			<div>
-				<h4 class="text-white font-semibold text-sm tracking-widest uppercase mb-4">Quick Links</h4>
+				<h4 class="text-white font-semibold text-sm tracking-widest uppercase mb-4"><?php esc_html_e( 'Quick Links', 'david-jenkins' ); ?></h4>
 				<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
 					<nav aria-label="<?php esc_attr_e( 'Footer Menu', 'david-jenkins' ); ?>">
 						<?php
