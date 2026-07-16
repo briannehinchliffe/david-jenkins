@@ -359,8 +359,8 @@
 				"medium": "500",
 				"bold": "700"
 			},
-			"link-color": "var(--wp--preset--color--blue-medium)",
-			"link-color-hover": "var(--wp--preset--color--green-medium)"
+			"link-color": "var(--wp--preset--color--accent)",
+			"link-color-hover": "var(--wp--preset--color--primary)"
 		}
 	},
 	"styles": {
