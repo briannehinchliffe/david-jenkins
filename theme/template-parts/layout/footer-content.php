@@ -53,11 +53,4 @@
 			<p class="text-blue-400 text-xs">Democrat · Cheshire County, New Hampshire</p>
 		</div>
 	</div>
-</footer>
-	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-		<aside role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'david-jenkins' ); ?>">
-			<?php dynamic_sidebar( 'sidebar-1' ); ?>
-		</aside>
-	<?php endif; ?>
-
 </footer><!-- #colophon -->
