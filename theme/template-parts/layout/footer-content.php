@@ -50,7 +50,7 @@
 			<p class="text-blue-300 text-xs">
 				<?php printf( esc_html__( 'Copyright &copy; %1$s %2$s', 'david-jenkins' ), esc_html( gmdate( 'Y' ) ), '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a>' ); ?>
 			</p>
-			<p class="text-blue-400 text-xs">Democrat · Cheshire County, New Hampshire</p>
+			<p class="text-blue-400 text-xs"><?php esc_html_e( 'Democrat · Cheshire County, New Hampshire', 'david-jenkins' ); ?></p>
 		</div>
 	</div>
 </footer><!-- #colophon -->
