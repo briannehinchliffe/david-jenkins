@@ -391,7 +391,8 @@
 					"radius": "var(--wp--preset--border-radius--small)",
 					"width": "var(--wp--custom--border-width)",
 					"style": "solid",
-					"color": "var(--wp--custom--color--primary)"
+					"color": "var(--wp--preset--color--primary)"
+				}
 				},
 				"spacing": {
 					"padding": {
