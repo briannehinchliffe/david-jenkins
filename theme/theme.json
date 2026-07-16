@@ -212,26 +212,6 @@
 							"fontFamily": "Volkhov",
 							"fontStretch": "normal",
 							"fontStyle": "normal",
-							"fontWeight": "600",
-							"src": [
-								"file:./assets/fonts/Volkhov-SemiBold.ttf"
-							]
-						},
-						{
-							"fontDisplay": "block",
-							"fontFamily": "Volkhov",
-							"fontStretch": "normal",
-							"fontStyle": "italic",
-							"fontWeight": "600",
-							"src": [
-								"file:./assets/fonts/Volkhov-SemiBoldItalic.ttf"
-							]
-						},
-						{
-							"fontDisplay": "block",
-							"fontFamily": "Volkhov",
-							"fontStretch": "normal",
-							"fontStyle": "normal",
 							"fontWeight": "700",
 							"src": [
 								"file:./assets/fonts/Volkhov-Bold.ttf"
