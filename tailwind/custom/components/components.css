@@ -67,3 +67,12 @@
 .entry-content > .alignright {
 	@apply float-right ml-8;
 }
+
+.footer-menu a {
+	@apply text-sm text-blue-200 hover:text-white transition-colors;
+}
+
+/* Adds the vertical spacing between the items */
+.footer-menu li + li {
+	@apply mt-2.5;
+}
