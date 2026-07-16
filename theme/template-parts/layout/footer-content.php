@@ -16,8 +16,8 @@
 			<div>
 				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/david-jenkins-logo-with-background.jpg" alt="David Jenkins for Cheshire County Attorney" class="h-[7.5rem] w-auto object-contain mb-4">
 
-				<p class="text-blue-200 text-sm leading-relaxed">Fighting for justice, safety, and accountability in Cheshire County, New Hampshire.</p>
-				<a href="https://www.facebook.com/DavidJenkins4CheshireCountyAttorney" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-4 text-blue-300 hover:text-white text-sm transition-colors"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Follow on Facebook
+				<p class="text-blue-200 text-sm leading-relaxed"><?php esc_html_e( 'Fighting for justice, safety, and accountability in Cheshire County, New Hampshire.', 'david-jenkins' ); ?></p>
+				<a href="https://www.facebook.com/DavidJenkins4CheshireCountyAttorney" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-4 text-blue-300 hover:text-white text-sm transition-colors"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg><?php esc_html_e( 'Follow on Facebook', 'david-jenkins' ); ?>
 				</a>
 			</div>
 			<div>
