@@ -381,8 +381,8 @@
 		"blocks": {
 			"core/button": {
 				"color": {
-					"background": "var(--wp--custom--color--primary)",
-					"text": "var(--wp--custom--background)"
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--background)"
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
