@@ -183,7 +183,7 @@
 			"defaultFontSizes": false,
 			"fontFamilies": [
 				{
-					"fontFamily": "Volkhov, serif;",
+				"fontFamily": "Volkhov, serif",
 					"name": "Volkhov",
 					"slug": "primary",
 					"fontFace": [
