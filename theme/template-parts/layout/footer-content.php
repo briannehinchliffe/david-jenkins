@@ -43,7 +43,7 @@
 					</div>
 					<div class="flex items-center gap-2 text-blue-200 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin text-blue-400 flex-shrink-0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Cheshire County, New Hampshire</span></div>
 				</div>
-				<div class="mt-6"><a class="bg-accent text-white text-sm font-semibold px-5 py-2.5 rounded hover:bg-red-700 transition-colors tracking-wide inline-block" href="/donate" data-discover="true">Donate Now</a></div>
+				<div class="mt-6"><a class="bg-accent text-white text-sm font-semibold px-5 py-2.5 rounded hover:bg-red-700 transition-colors tracking-wide inline-block" href="<?php echo esc_url( home_url( '/donate/' ) ); ?>"><?php esc_html_e( 'Donate Now', 'david-jenkins' ); ?></a></div>
 			</div>
 		</div>
 		<div class="mt-10 pt-6 border-t border-white/15 flex flex-col md:flex-row justify-between items-center gap-4">
