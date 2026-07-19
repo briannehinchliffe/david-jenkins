@@ -79,8 +79,14 @@
 
 header#masthead {
 
-	nav a {
-		@apply text-sm font-medium tracking-wide transition-colors hover:text-accent text-primary;
+	nav {
+		a {
+			@apply text-sm font-medium tracking-wide transition-colors hover:text-accent text-primary;
+		}
+
+		.current-menu-item a {
+			@apply text-accent;
+		}
 	}
 
 	#primary-menu-mobile li {
