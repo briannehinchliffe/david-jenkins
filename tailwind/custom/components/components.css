@@ -83,7 +83,7 @@ header {
 		@apply text-sm font-medium tracking-wide transition-colors hover:text-accent text-primary;
 	}
 
-	.primary-menu-mobile li {
+	#primary-menu-mobile li {
 		@apply text-base font-medium transition-colors hover:text-accent text-primary;
 	}
 
