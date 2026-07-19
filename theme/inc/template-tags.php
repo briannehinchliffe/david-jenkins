@@ -7,6 +7,24 @@
  * @package david-jenkins
  */
 
+if ( ! function_exists( 'david_jenkins_content_has_h1' ) ) :
+	/**
+	 * Check if post content contains an H1 heading block.
+	 *
+	 * @param int|WP_Post|null $post Post ID or object. Defaults to current post.
+	 * @return bool
+	 */
+	function david_jenkins_content_has_h1( $post = null ) {
+		$post = get_post( $post );
+
+		if ( ! $post || ! has_blocks( $post->post_content ) ) {
+			return false;
+		}
+
+		return david_jenkins_content_has_h1( parse_blocks( $post->post_content ) );
+	}
+endif;
+
 if ( ! function_exists( 'david_jenkins_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.

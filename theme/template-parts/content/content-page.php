@@ -10,14 +10,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 	<header class="entry-header">
 		<?php
-		if ( ! is_front_page() ) {
+		// If it's not the front page, display the title.
+		if ( ! is_front_page() && ! david_jenkins_content_has_h1() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
-		} else {
-			the_title( '<h2 class="entry-title">', '</h2>' );
-		}
+		endif;
 		?>
 	</header><!-- .entry-header -->
 
