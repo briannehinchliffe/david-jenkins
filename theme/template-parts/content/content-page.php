@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-		// If it's not the front page, display the title.
+		// If it's not the front page and the content doesn't already contain an H1, display the title.
 		if ( ! is_front_page() && ! david_jenkins_content_has_h1() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		endif;
