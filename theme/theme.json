@@ -71,11 +71,6 @@
 					"color": "#FAF8F2"
 				},
 				{
-					"name": "Foreground",
-					"slug": "foreground",
-					"color": "#1B2B5E"
-				},
-				{
 					"name": "Muted",
 					"slug": "muted",
 					"color": "#E8E4DA"
@@ -84,6 +79,11 @@
 					"name": "Muted Foreground",
 					"slug": "muted-foreground",
 					"color": "#6B6355"
+				},
+				{
+					"name": "White",
+					"slug": "white",
+					"color": "#FFFFFF"
 				}
 			],
 			"gradients": [
