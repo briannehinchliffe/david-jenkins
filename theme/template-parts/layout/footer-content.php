@@ -11,7 +11,7 @@
 
 <footer id="colophon" class="bg-primary text-white">
 	<div class="h-1.5 bg-accent"></div>
-	<div class="max-w-7xl mx-auto px-5 lg:px-10 py-12">
+	<div class="max-w-content mx-auto px-5 lg:px-10 py-12">
 		<div class="grid md:grid-cols-3 gap-10">
 			<div>
 				<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>

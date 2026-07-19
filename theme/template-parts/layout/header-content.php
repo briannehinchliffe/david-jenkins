@@ -9,39 +9,69 @@
 
 ?>
 
-<header id="masthead">
-
-	<div>
-		<?php
-		if ( is_front_page() ) :
-			?>
-			<h1><?php bloginfo( 'name' ); ?></h1>
+<header id="masthead" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/97 backdrop-blur-sm">
+	<div class="max-w-content mx-auto px-5 lg:px-10">
+		<div class="flex items-center justify-between h-20 lg:h-30">
 			<?php
-		else :
-			?>
-			<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-		endif;
+			the_custom_logo();
 
-		$david_jenkins_description = get_bloginfo( 'description', 'display' );
-		if ( $david_jenkins_description || is_customize_preview() ) :
-			?>
-			<p><?php echo $david_jenkins_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-		<?php endif; ?>
+			// If there is a custom logo, use the screen-reader-text class to hide the site title.
+			$title_class = has_custom_logo() ? 'site-title screen-reader-text' : 'site-title';
+
+			if ( is_front_page() ) :
+				?>
+				<h1 class="<?php echo esc_attr( $title_class ); ?>">
+					<a class="flex-shrink-0" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
+					</a>
+				</h1>
+			<?php else : ?>
+				<p class="<?php echo esc_attr( $title_class ); ?>">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
+					</a>
+				</p>
+			<?php endif; ?>
+			<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+				<nav class="hidden lg:flex items-center gap-8" aria-label="<?php esc_attr_e( 'Primary Menu', 'david-jenkins' ); ?>">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+							'container'      => false,
+							'menu_class'     => 'flex items-center gap-8',
+							'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+							'depth'          => 1,
+						)
+					);
+					?>
+				</nav>
+
+				<!-- Mobile Menu Toggle Button -->
+				<button id="menu-toggle" class="lg:hidden text-primary p-2 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+					<!-- Hamburger Icon (Visible by default) -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu menu-icon block"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+					<!-- Close X Icon (Hidden by default) -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x close-icon hidden"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+				</button>
+			<?php endif; ?>
+		</div>
 	</div>
 
-	<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'david-jenkins' ); ?>">
-		<button aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'david-jenkins' ); ?></button>
-
-		<?php
-		wp_nav_menu(
-			array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
-			)
-		);
-		?>
-	</nav><!-- #site-navigation -->
-
+	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+		<!-- Mobile Menu Panel (Hidden by default) -->
+		<div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-border">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu-mobile',
+					'container'      => false,
+					'menu_class'     => 'px-5 py-4 flex flex-col gap-4',
+					'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+					'depth'          => 1,
+				)
+			);
+			?>
+		</div>
+	<?php endif; ?>
 </header><!-- #masthead -->

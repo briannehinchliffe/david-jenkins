@@ -19,7 +19,7 @@
  */
 .page-title,
 .entry-title {
-	@apply max-w-content mx-auto mb-6 text-3xl font-extrabold;
+	@apply max-w-content mx-auto mb-6 px-5 lg:px-10 text-3xl font-extrabold;
 }
 
 /**
@@ -48,7 +48,7 @@
 .page-content > *,
 .entry-content > * {
 	/* Content width from the `theme.json` file */
-	@apply max-w-content mx-auto;
+	@apply max-w-content mx-auto px-5 lg:px-10;
 }
 
 .entry-content > .alignwide {
@@ -68,17 +68,58 @@
 	@apply float-right ml-8;
 }
 
-.footer-menu a {
-	@apply text-sm text-blue-200 hover:text-white transition-colors;
+/**
+ * Header styles.
+ */
+
+/* Dynamically push the header down if the admin bar is visible */
+.admin-bar header#masthead {
+	top: var(--wp-admin--admin-bar--height, 32px);
 }
 
-/* Adds the vertical spacing between the items */
-.footer-menu li + li {
-	@apply mt-2.5;
-}
+header {
 
-footer aside {
-	a {
-		@apply text-sm text-blue-200 hover:text-white transition-colors;
+	nav a {
+		@apply text-sm font-medium tracking-wide transition-colors hover:text-accent text-primary;
 	}
+
+	.primary-menu-mobile li {
+		@apply text-base font-medium transition-colors hover:text-accent text-primary;
+	}
+
+	.custom-logo-link {
+		@apply flex-shrink-0;
+	}
+
+	.custom-logo {
+		@apply h-20 lg:h-30 w-auto object-contain;
+	}
+}
+
+
+#content {
+	@apply pt-24 lg:pt-30;
+}
+
+/**
+ * Footer styles.
+ */
+
+footer {
+	aside {
+		a {
+			@apply text-sm text-blue-200 hover:text-white transition-colors;
+		}
+	}
+
+	.footer-menu {
+		a {
+			@apply text-sm text-blue-200 hover:text-white transition-colors;
+		}
+
+		li + li {
+			@apply mt-2.5;
+		}
+	}
+
 }
