@@ -15,6 +15,28 @@ if ( ! function_exists( 'david_jenkins_content_has_h1' ) ) :
 	 * @return bool
 	 */
 	function david_jenkins_content_has_h1( $post = null ) {
+		// When called recursively, $post is the parsed blocks array.
+		if ( is_array( $post ) ) {
+			foreach ( $post as $block ) {
+				if ( isset( $block['blockName'] ) && 'core/heading' === $block['blockName'] ) {
+					$level = isset( $block['attrs']['level'] ) ? (int) $block['attrs']['level'] : 2;
+					if ( 1 === $level ) {
+						return true;
+					}
+				}
+
+				if ( ! empty( $block['innerHTML'] ) && false !== strpos( $block['innerHTML'], '<h1' ) ) {
+					return true;
+				}
+
+				if ( ! empty( $block['innerBlocks'] ) && david_jenkins_content_has_h1( $block['innerBlocks'] ) ) {
+					return true;
+				}
+			}
+
+			return false;
+		}
+
 		$post = get_post( $post );
 
 		if ( ! $post || ! has_blocks( $post->post_content ) ) {
