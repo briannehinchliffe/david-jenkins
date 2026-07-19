@@ -59,7 +59,7 @@
 
 	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 		<!-- Mobile Menu Panel (Hidden by default) -->
-		<div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-border">
+		<nav id="mobile-menu" class="hidden lg:hidden bg-white border-t border-border" aria-label="<?php esc_attr_e( 'Primary Menu', 'david-jenkins' ); ?>">
 			<?php
 			wp_nav_menu(
 				array(
@@ -72,6 +72,6 @@
 				)
 			);
 			?>
-		</div>
+		</nav>
 	<?php endif; ?>
 </header><!-- #masthead -->
