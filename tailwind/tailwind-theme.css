@@ -18,7 +18,7 @@
 	 * values instead of the `var()` functions below.
      */
 	--color-background: var(--wp--preset--color--background);
-	--color-foreground: var(--wp--preset--color--foreground);
+	--color-foreground: var(--wp--preset--color--primary);
 	--color-primary: var(--wp--preset--color--primary);
 	--color-secondary: var(--wp--preset--color--secondary);
 	--color-accent: var(--wp--preset--color--accent);
