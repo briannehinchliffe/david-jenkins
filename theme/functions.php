@@ -219,6 +219,30 @@ function david_jenkins_modify_heading_levels( $args, $block_type ) {
 add_filter( 'register_block_type_args', 'david_jenkins_modify_heading_levels', 10, 2 );
 
 /**
+ * Register block variations.
+ *
+ * @return void
+ */
+function david_jenkins_register_block_styles() {
+	register_block_style(
+		'core/button',
+		array(
+			'name'  => 'fill-red',
+			'label' => __( 'Red Fill', 'david-jenkins' ),
+		)
+	);
+
+	register_block_style(
+		'core/button',
+		array(
+			'name'  => 'fill-white',
+			'label' => __( 'White Fill', 'david-jenkins' ),
+		)
+	);
+}
+add_action( 'init', 'david_jenkins_register_block_styles' );
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';

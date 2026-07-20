@@ -337,6 +337,7 @@
 				"light": "300",
 				"regular": "400",
 				"medium": "500",
+				"semibold": "600",
 				"bold": "700"
 			},
 			"link-color": "var(--wp--preset--color--accent)",
@@ -344,6 +345,10 @@
 		}
 	},
 	"styles": {
+		"color": {
+			"text": "var:preset|color|primary",
+			"background": "var:preset|color|background"
+		},
 		"typography": {
 			"fontSize": "var:preset|font-size|medium",
 			"fontFamily": "var:preset|font-family|secondary",
@@ -365,23 +370,49 @@
 					"text": "var(--wp--preset--color--background)"
 				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)"
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"fontWeight": "var(--wp--custom--font-weight--semibold)"
 				},
 				"border": {
-					"radius": "var(--wp--preset--border-radius--small)",
-					"width": "var(--wp--custom--border-width)",
-					"style": "solid",
-					"color": "var(--wp--preset--color--primary)"
+					"radius": "var(--wp--preset--border-radius--medium)"
 				},
 				"spacing": {
 					"padding": {
-						"top": "0.5em",
-						"right": "1em",
-						"bottom": "0.5em",
-						"left": "1em"
+						"top": "1em",
+						"right": "2em",
+						"bottom": "1em",
+						"left": "2em"
 					}
 				},
 				"variations": {
+					"fill-red": {
+						"color": {
+							"background": "var(--wp--preset--color--accent)",
+							"text": "var(--wp--preset--color--white)"
+						},
+						"spacing": {
+							"padding": {
+								"top": "1em",
+								"right": "2em",
+								"bottom": "1em",
+								"left": "2em"
+							}
+						}
+					},
+					"fill-white": {
+						"color": {
+							"background": "var(--wp--preset--color--white)",
+							"text": "var(--wp--preset--color--primary)"
+						},
+						"spacing": {
+							"padding": {
+								"top": "1em",
+								"right": "2em",
+								"bottom": "1em",
+								"left": "2em"
+							}
+						}
+					},
 					"outline": {
 						"color": {
 							"background": "transparent",
@@ -391,7 +422,7 @@
 							"color": "var(--wp--preset--color--primary)",
 							"style": "solid",
 							"width": "var(--wp--custom--border-width)",
-							"radius": "var(--wp--preset--border-radius--small)"
+							"radius": "var(--wp--preset--border-radius--medium)"
 						},
 						"spacing": {
 							"padding": {
@@ -554,6 +585,9 @@
 			"link": {
 				"color": {
 					"text": "var(--wp--custom--link-color)"
+				},
+				"typography": {
+					"textDecoration": "none"
 				},
 				":hover": {
 					"color": {
