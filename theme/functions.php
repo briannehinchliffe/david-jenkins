@@ -219,7 +219,7 @@ function david_jenkins_modify_heading_levels( $args, $block_type ) {
 add_filter( 'register_block_type_args', 'david_jenkins_modify_heading_levels', 10, 2 );
 
 /**
- * Register block variations.
+ * Register block styles.
  *
  * @return void
  */
