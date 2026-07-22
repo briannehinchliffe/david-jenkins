@@ -239,6 +239,14 @@ function david_jenkins_register_block_styles() {
 			'label' => __( 'White Fill', 'david-jenkins' ),
 		)
 	);
+
+	register_block_style(
+		'core/separator',
+		array(
+			'name'  => 'short',
+			'label' => __( 'Short', 'david-jenkins' ),
+		)
+	);
 }
 add_action( 'init', 'david_jenkins_register_block_styles' );
 
