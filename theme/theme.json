@@ -14,11 +14,6 @@
 		"border": {
 			"radiusSizes": [
 				{
-					"name": "None",
-					"slug": "none",
-					"size": "0"
-				},
-				{
 					"name": "Small",
 					"slug": "small",
 					"size": "2px"
@@ -415,6 +410,21 @@
 								"bottom": "0.5em",
 								"left": "1em"
 							}
+						}
+					}
+				}
+			},
+			"core/separator": {
+				"border": {
+					"color": "var(--wp--preset--color--accent)",
+					"width": "2px",
+					"radius": "var(--wp--preset--border-radius--medium)"
+				},
+				"variations": {
+					"short": {
+						"border": {
+							"color": "var(--wp--preset--color--accent)",
+							"width": "4px"
 						}
 					}
 				}
