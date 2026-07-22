@@ -8,7 +8,7 @@
  */
 
 .is-style-bounce-effect img {
-	@apply animate-bounce;
+	@apply motion-safe:animate-bounce motion-reduce:animate-none;
 }
 
 .is-style-stagger-gallery {
