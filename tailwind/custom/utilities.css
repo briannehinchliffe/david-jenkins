@@ -72,8 +72,10 @@
 	}
 }
 
-.is-style-short {
+.wp-block-separator.is-style-short {
 	width: 50px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .glass-column {
