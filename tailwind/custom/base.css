@@ -3,11 +3,10 @@
  */
 
 /**
- * This uses the background and foreground colors declared in the `theme.json`
+ * This uses the background and primary colors declared in the `theme.json`
  * file and is applied both to the front end and in the block editor.
  */
 body {
-	@apply bg-background text-foreground font-sans;
+	@apply bg-background text-primary font-sans;
 }
-
 

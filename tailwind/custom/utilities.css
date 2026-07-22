@@ -6,3 +6,44 @@
  *
  * https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities
  */
+
+.bounce-effect img {
+	@apply motion-safe:animate-bounce motion-reduce:animate-none;
+}
+
+.stagger-gallery {
+	display: grid !important;
+	grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+	gap: 0.75rem !important;
+
+	flex-direction: unset !important;
+	flex-wrap: unset !important;
+	align-items: unset !important;
+
+	> figure {
+		@apply rounded-lg overflow-hidden !bg-secondary !w-full !m-0;
+		display: block !important;
+		max-width: 100% !important;
+
+		img {
+			@apply !w-full !h-full !object-cover !object-top;
+			display: block !important;
+		}
+
+		&:nth-of-type(1) {
+			@apply !aspect-[4/5] !col-span-1 !row-span-2;
+		}
+
+		&:nth-of-type(2) {
+			@apply !aspect-square;
+		}
+
+		&:nth-of-type(3) {
+			@apply !aspect-square;
+
+			img {
+				@apply !object-center;
+			}
+		}
+	}
+}
