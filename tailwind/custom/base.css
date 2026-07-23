@@ -10,9 +10,51 @@ body {
 	@apply bg-background text-primary font-sans;
 }
 
-@layer base {
-	h1, h2, h3, h4, h5, h6 {
-		font-size: revert !important;
-		font-weight: revert !important;
-	}
+/* Ensure theme.json element settings override Tailwind Preflight resets */
+h1 {
+	font-family: var(--wp--preset--font-family--primary);
+	font-size: var(--wp--preset--font-size--xxxx-large);
+	line-height: var(--wp--custom--line-height--heading);
+	margin-top: var(--wp--preset--spacing--40);
+	margin-bottom: var(--wp--preset--spacing--40);
+}
+
+h2 {
+	font-family: var(--wp--preset--font-family--primary);
+	font-size: var(--wp--preset--font-size--x-large);
+	line-height: var(--wp--custom--line-height--heading);
+	margin-top: var(--wp--preset--spacing--30);
+	margin-bottom: var(--wp--preset--spacing--30);
+}
+
+h3 {
+	font-family: var(--wp--preset--font-family--primary);
+	font-size: var(--wp--preset--font-size--large);
+	line-height: var(--wp--custom--line-height--heading);
+	margin-top: var(--wp--preset--spacing--30);
+	margin-bottom: var(--wp--preset--spacing--30);
+}
+
+h4 {
+	font-family: var(--wp--preset--font-family--primary);
+	font-size: var(--wp--preset--font-size--medium);
+	line-height: var(--wp--custom--line-height--heading);
+	margin-top: var(--wp--preset--spacing--30);
+	margin-bottom: var(--wp--preset--spacing--30);
+}
+
+h5 {
+	font-family: var(--wp--preset--font-family--secondary);
+	font-size: var(--wp--preset--font-size--medium);
+	line-height: var(--wp--custom--line-height--heading);
+	margin-top: var(--wp--preset--spacing--30);
+	margin-bottom: var(--wp--preset--spacing--30);
+}
+
+h6 {
+	font-family: var(--wp--preset--font-family--secondary);
+	font-size: var(--wp--preset--font-size--small);
+	line-height: var(--wp--custom--line-height--heading);
+	margin-top: var(--wp--preset--spacing--30);
+	margin-bottom: var(--wp--preset--spacing--30);
 }
