@@ -155,3 +155,49 @@
 .glass-column {
 	@apply bg-white/10 border border-white/20 rounded-lg p-5 hover:bg-white/15 transition-colors;
 }
+
+/* Custom Offset Framed Image Style */
+.framed-image {
+	position: relative;
+	/* Add margin so the offset border doesn't clip outside the layout */
+	margin-top: 0.75rem;
+	margin-left: 0.75rem;
+
+	/* 1. Offset Red Border */
+	&::before {
+		content: "";
+		position: absolute;
+		/* Shifts the frame up and left relative to the image */
+		top: -10px;
+		left: -10px;
+		right: 10px;
+		bottom: 10px;
+		border: 2px solid color-mix(in srgb, var(--wp--preset--color--accent) 30%, transparent);
+		border-radius: var(--wp--preset--border-radius--large);
+		z-index: 0;
+		pointer-events: none;
+	}
+
+	/* 2. Main Image Styling */
+	> img,
+	> a {
+		position: relative;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		border-radius: 0.5rem;
+	}
+
+	/* 3. Figcaption Overlay at Bottom */
+	> figcaption {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		margin: 0 !important;
+
+		/* Utility styles for the caption bar */
+		@apply !bg-blue-950 !text-white !font-bold !text-sm !px-5 !py-3.5 !text-left rounded-b-lg;
+	}
+}
