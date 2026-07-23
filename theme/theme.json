@@ -51,6 +51,11 @@
 					"color": "#1B2B5E"
 				},
 				{
+					"name": "Light Primary",
+					"slug": "primary-light",
+					"color": "oklch(88.2% 0.059 254.128)"
+				},
+				{
 					"name": "Secondary",
 					"slug": "secondary",
 					"color": "#F0EDE5"
