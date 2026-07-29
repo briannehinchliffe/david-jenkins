@@ -16,3 +16,6 @@ david-jenkins.zip
 
 # Ignore .DS_Store files from macOS:
 .DS_Store
+
+# Ignore .idea/ files:
+/.idea
