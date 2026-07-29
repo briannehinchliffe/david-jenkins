@@ -11,7 +11,6 @@
  * Button Hover styles.
  */
 .wp-block-button {
-
 	> .wp-block-button__link {
 		@apply transition-colors duration-200;
 
@@ -21,9 +20,7 @@
 	}
 
 	&.is-style-outline {
-
 		> .wp-block-button__link {
-
 			&:hover {
 				background-color: var(--wp--preset--color--primary);
 				color: var(--wp--preset--background);
@@ -32,7 +29,6 @@
 	}
 
 	&.is-style-fill-red {
-
 		> .wp-block-button__link {
 			@apply transition-colors duration-200;
 
@@ -43,12 +39,11 @@
 	}
 
 	&.is-style-fill-white {
-
 		> .wp-block-button__link {
 			@apply transition-colors duration-200;
 
 			&:hover {
-				@apply !bg-blue-50 !text-primary;
+				@apply !text-primary !bg-blue-50;
 			}
 		}
 		/* Context: Inside a Blue Container */
@@ -68,7 +63,7 @@
 }
 
 .featured-link {
-	@apply inline-flex items-center gap-2 font-semibold text-sm transition-all relative;
+	@apply relative inline-flex items-center gap-2 text-sm font-semibold transition-all;
 
 	&::after {
 		content: "";
@@ -109,17 +104,17 @@
 	align-items: unset !important;
 
 	> figure {
-		@apply rounded-lg overflow-hidden !bg-secondary !w-full !m-0;
+		@apply !bg-secondary !m-0 !w-full overflow-hidden rounded-lg;
 		display: block !important;
 		max-width: 100% !important;
 
 		img {
-			@apply !w-full !h-full !object-cover !object-top;
+			@apply !h-full !w-full !object-cover !object-top;
 			display: block !important;
 		}
 
 		&:nth-of-type(1) {
-			@apply !aspect-[4/5] !col-span-1 !row-span-2;
+			@apply !col-span-1 !row-span-2 !aspect-[4/5];
 		}
 
 		&:nth-of-type(2) {
@@ -153,32 +148,33 @@
 }
 
 .glass-column {
-	@apply bg-white/10 border border-white/20 rounded-lg p-5 hover:bg-white/15 transition-colors;
+	@apply rounded-lg border border-white/20 bg-white/10 p-5 transition-colors hover:bg-white/15;
 }
 
 /* Custom Offset Framed Image Style */
 .framed-image {
 	position: relative;
-	/* Add margin so the offset border doesn't clip outside the layout */
 	margin-top: 0.75rem;
 	margin-left: 0.75rem;
 
-	/* 1. Offset Red Border */
 	&::before {
 		content: "";
 		position: absolute;
-		/* Shifts the frame up and left relative to the image */
 		top: -10px;
 		left: -10px;
 		right: 10px;
 		bottom: 10px;
-		border: 2px solid color-mix(in srgb, var(--wp--preset--color--accent) 30%, transparent);
+		border: 2px solid
+			color-mix(
+				in srgb,
+				var(--wp--preset--color--accent) 30%,
+				transparent
+			);
 		border-radius: var(--wp--preset--border-radius--large);
 		z-index: 0;
 		pointer-events: none;
 	}
 
-	/* 2. Main Image Styling */
 	> img,
 	> a {
 		position: relative;
@@ -198,6 +194,6 @@
 		margin: 0 !important;
 
 		/* Utility styles for the caption bar */
-		@apply !bg-blue-950 !text-white !font-bold !text-sm !px-5 !py-3.5 !text-left rounded-b-lg;
+		@apply !bg-primary/90 rounded-b-lg !px-5 !py-3.5 !text-left !text-sm !font-bold !text-white;
 	}
 }
