@@ -147,6 +147,14 @@
 	}
 }
 
+.col-grid-priorities {
+	@media screen and (min-width: 780px) and (max-width: 1014px) {
+		display: grid !important;
+		grid-template-columns: 1fr 1fr;
+		/*@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5;*/
+	}
+}
+
 .glass-column {
 	@apply rounded-lg border border-white/20 bg-white/10 p-5 transition-colors hover:bg-white/15;
 }
