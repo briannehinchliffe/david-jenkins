@@ -314,14 +314,14 @@
 
 	/* Second Column: Main Content */
 	> .wp-block-column:last-child {
-		@apply flex-1 pl-0 border-t-2 border-primary/15 pt-6;
+		@apply border-primary/15 flex-1 border-t-2 pt-6 pl-0;
 
 		border-left: none;
 	}
 
 	/* Desktop Styles (md / 768px+) */
 	@media (min-width: 780px) {
-		@apply flex-row gap-10 pt-0 border-t-0;
+		@apply flex-row gap-10 border-t-0 pt-0;
 
 		/* First Column turns back into vertical stack on desktop */
 		> .wp-block-column:first-child {
@@ -334,7 +334,7 @@
 
 		/* Second Column gets the left border on desktop */
 		> .wp-block-column:last-child {
-			@apply pl-10 border-l border-primary/15;
+			@apply border-primary/15 border-l pl-10;
 
 			border-top: none;
 		}
