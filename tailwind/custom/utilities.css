@@ -297,3 +297,46 @@
 		z-index: 1;
 	}
 }
+
+.wp-block-columns.priority-item {
+	/* Default Mobile Styles */
+	@apply flex flex-col gap-6 pt-6;
+
+	/* First Column: Meta (Icon + Number) */
+	> .wp-block-column:first-child {
+		@apply flex-none;
+
+		/* Inner Row containing Icon + "01" */
+		.wp-block-group {
+			@apply inline-flex items-center gap-4;
+		}
+	}
+
+	/* Second Column: Main Content */
+	> .wp-block-column:last-child {
+		@apply flex-1 pl-0 border-t-2 border-primary/15 pt-6;
+
+		border-left: none;
+	}
+
+	/* Desktop Styles (md / 768px+) */
+	@media (min-width: 780px) {
+		@apply flex-row gap-10 pt-0 border-t-0;
+
+		/* First Column turns back into vertical stack on desktop */
+		> .wp-block-column:first-child {
+			@apply w-24 shrink-0; /* Fixed width for icon/number column */
+
+			.wp-block-group {
+				@apply flex-col items-start gap-2; /* Stacks icon on top of "01" */
+			}
+		}
+
+		/* Second Column gets the left border on desktop */
+		> .wp-block-column:last-child {
+			@apply pl-10 border-l border-primary/15;
+
+			border-top: none;
+		}
+	}
+}
