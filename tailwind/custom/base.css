@@ -58,3 +58,10 @@ h6 {
 	margin-top: var(--wp--preset--spacing--30);
 	margin-bottom: var(--wp--preset--spacing--30);
 }
+
+cite {
+	font-family: var(--wp--preset--font-family--secondary);
+	font-size: var(--wp--preset--font-size--medium);
+	font-style: normal;
+	font-weight: normal;
+}
