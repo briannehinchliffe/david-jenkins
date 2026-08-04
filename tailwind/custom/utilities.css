@@ -138,10 +138,8 @@
 /* Custom utility class to stack mobile-top and desktop-bottom */
 .col-justify-end-desktop {
 	display: flex;
-	/*flex-direction: column !important;*/
 	justify-content: flex-start;
 
-	/* Desktop breakpoint */
 	@media (min-width: 780px) {
 		justify-content: flex-end;
 	}
@@ -151,7 +149,6 @@
 	@media screen and (min-width: 780px) and (max-width: 1014px) {
 		display: grid !important;
 		grid-template-columns: 1fr 1fr;
-		/*@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5;*/
 	}
 }
 
@@ -165,7 +162,8 @@
 	overflow: hidden;
 
 	> img,
-	> a {
+	> a,
+	> a > img {
 		display: block;
 		width: 100%;
 		height: auto;
@@ -219,7 +217,8 @@
 	}
 
 	> img,
-	> a {
+	> a,
+	> a > img {
 		position: relative;
 		z-index: 1;
 		display: block;
@@ -278,12 +277,12 @@
 		&::before {
 			content: "";
 			position: absolute;
-			top: 1.25rem; /* Starts at the vertical center of a 40px (2.5rem) icon */
-			bottom: -2.5rem; /* Extends down through the bottom margin to reach the next icon */
+			top: 1.25rem;
+			bottom: -2.5rem;
 			left: 50%;
 			width: 1px;
 			transform: translateX(-50%);
-			background-color: theme("colors.slate.300", #cbd5e1);
+			@apply bg-slate-300;
 			z-index: 0;
 		}
 	}
@@ -319,7 +318,6 @@
 		border-left: none;
 	}
 
-	/* Desktop Styles (md / 768px+) */
 	@media (min-width: 780px) {
 		@apply flex-row gap-10 border-t-0 pt-0;
 
