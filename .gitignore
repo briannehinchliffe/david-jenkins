@@ -18,4 +18,4 @@ david-jenkins.zip
 .DS_Store
 
 # Ignore .idea files:
-/.idea
+/.idea/
