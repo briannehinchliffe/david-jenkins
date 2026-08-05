@@ -11,7 +11,6 @@
  * Button Hover styles.
  */
 .wp-block-button {
-
 	> .wp-block-button__link {
 		@apply transition-colors duration-200;
 
@@ -21,9 +20,7 @@
 	}
 
 	&.is-style-outline {
-
 		> .wp-block-button__link {
-
 			&:hover {
 				background-color: var(--wp--preset--color--primary);
 				color: var(--wp--preset--background);
@@ -32,7 +29,6 @@
 	}
 
 	&.is-style-fill-red {
-
 		> .wp-block-button__link {
 			@apply transition-colors duration-200;
 
@@ -43,12 +39,11 @@
 	}
 
 	&.is-style-fill-white {
-
 		> .wp-block-button__link {
 			@apply transition-colors duration-200;
 
 			&:hover {
-				@apply !bg-blue-50 !text-primary;
+				@apply !text-primary !bg-blue-50;
 			}
 		}
 		/* Context: Inside a Blue Container */
@@ -68,7 +63,7 @@
 }
 
 .featured-link {
-	@apply inline-flex items-center gap-2 font-semibold text-sm transition-all relative;
+	@apply relative inline-flex items-center gap-2 text-sm font-semibold transition-all;
 
 	&::after {
 		content: "";
@@ -109,17 +104,17 @@
 	align-items: unset !important;
 
 	> figure {
-		@apply rounded-lg overflow-hidden !bg-secondary !w-full !m-0;
+		@apply !bg-secondary !m-0 !w-full overflow-hidden rounded-lg;
 		display: block !important;
 		max-width: 100% !important;
 
 		img {
-			@apply !w-full !h-full !object-cover !object-top;
+			@apply !h-full !w-full !object-cover !object-top;
 			display: block !important;
 		}
 
 		&:nth-of-type(1) {
-			@apply !aspect-[4/5] !col-span-1 !row-span-2;
+			@apply !col-span-1 !row-span-2 !aspect-[4/5];
 		}
 
 		&:nth-of-type(2) {
@@ -143,15 +138,203 @@
 /* Custom utility class to stack mobile-top and desktop-bottom */
 .col-justify-end-desktop {
 	display: flex;
-	/*flex-direction: column !important;*/
 	justify-content: flex-start;
 
-	/* Desktop breakpoint */
 	@media (min-width: 780px) {
 		justify-content: flex-end;
 	}
 }
 
+.col-grid-priorities {
+	@media screen and (min-width: 780px) and (max-width: 1014px) {
+		display: grid !important;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
 .glass-column {
-	@apply bg-white/10 border border-white/20 rounded-lg p-5 hover:bg-white/15 transition-colors;
+	@apply rounded-lg border border-white/20 bg-white/10 p-5 transition-colors;
+}
+
+/* Custom Image Overlay Caption */
+.wp-block-image.gradient-caption {
+	position: relative;
+	overflow: hidden;
+
+	> img,
+	> a,
+	> a > img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	/* Figcaption overlay with your gradient */
+	> figcaption {
+		position: absolute;
+		@apply from-primary/80 via-primary/10 inset-0 bg-gradient-to-t to-transparent;
+
+		/* Layout & Flex Alignment: Pushes text to the bottom */
+		display: flex !important;
+		flex-direction: column;
+		justify-content: flex-end;
+
+		margin: 0;
+		padding: 0.75rem;
+
+		border-radius: var(--wp--preset--border-radius--x-large);
+
+		/* Styling for the text inside */
+		color: white;
+		text-align: center;
+		font-size: var(--wp--preset--font-size--small);
+		line-height: 1.2;
+	}
+}
+
+/* Custom Offset Framed Image Style */
+.wp-block-image.framed-image {
+	position: relative;
+	margin-top: 0.75rem;
+	margin-left: 0.75rem;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -10px;
+		left: -10px;
+		right: 10px;
+		bottom: 10px;
+		border: 2px solid
+			color-mix(
+				in srgb,
+				var(--wp--preset--color--accent) 30%,
+				transparent
+			);
+		border-radius: var(--wp--preset--border-radius--large);
+		z-index: 0;
+		pointer-events: none;
+	}
+
+	> img,
+	> a,
+	> a > img {
+		position: relative;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		border-radius: 0.5rem;
+	}
+
+	> figcaption {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		margin: 0 !important;
+
+		@apply !bg-primary/90 rounded-b-lg !px-5 !py-3.5 !text-left !text-sm !font-bold !text-white;
+	}
+}
+
+/* Full-width Facebook Button Variant */
+.wp-block-button.btn-facebook {
+	> .wp-block-button__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 0.75rem;
+			height: 1.25rem;
+			background-color: currentColor;
+			mask: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.00001 0.666626H6.00001C5.11595 0.666626 4.2681 1.01782 3.64298 1.64294C3.01786 2.26806 2.66667 3.1159 2.66667 3.99996V5.99996H0.666672V8.66663H2.66667V14H5.33334V8.66663H7.33334L8.00001 5.99996H5.33334V3.99996C5.33334 3.82315 5.40358 3.65358 5.5286 3.52856C5.65363 3.40353 5.82319 3.33329 6.00001 3.33329H8.00001V0.666626Z' stroke='black' stroke-width='1.33333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+				no-repeat center / contain;
+			-webkit-mask: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.00001 0.666626H6.00001C5.11595 0.666626 4.2681 1.01782 3.64298 1.64294C3.01786 2.26806 2.66667 3.1159 2.66667 3.99996V5.99996H0.666672V8.66663H2.66667V14H5.33334V8.66663H7.33334L8.00001 5.99996H5.33334V3.99996C5.33334 3.82315 5.40358 3.65358 5.5286 3.52856C5.65363 3.40353 5.82319 3.33329 6.00001 3.33329H8.00001V0.666626Z' stroke='black' stroke-width='1.33333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+				no-repeat center / contain;
+		}
+	}
+}
+
+/* Timeline Container & Vertical Line */
+.timeline-container {
+	position: relative;
+}
+
+/* Individual Timeline Row */
+.timeline-item {
+	position: relative;
+
+	> .wp-block-column:first-child {
+		position: relative;
+		display: flex;
+		justify-content: center;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 1.25rem;
+			bottom: -2.5rem;
+			left: 50%;
+			width: 1px;
+			transform: translateX(-50%);
+			@apply bg-slate-300;
+			z-index: 0;
+		}
+	}
+
+	&:last-child > .wp-block-column:first-child::before {
+		display: none;
+	}
+
+	.timeline-icon {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.wp-block-columns.priority-item {
+	/* Default Mobile Styles */
+	@apply flex flex-col gap-6 pt-6;
+
+	/* First Column: Meta (Icon + Number) */
+	> .wp-block-column:first-child {
+		@apply flex-none;
+
+		/* Inner Row containing Icon + "01" */
+		.wp-block-group {
+			@apply inline-flex items-center gap-4;
+		}
+	}
+
+	/* Second Column: Main Content */
+	> .wp-block-column:last-child {
+		@apply border-primary/15 flex-1 border-t-2 pt-6 pl-0;
+
+		border-left: none;
+	}
+
+	@media (min-width: 780px) {
+		@apply flex-row gap-10 border-t-0 pt-0;
+
+		/* First Column turns back into vertical stack on desktop */
+		> .wp-block-column:first-child {
+			@apply w-24 shrink-0; /* Fixed width for icon/number column */
+
+			.wp-block-group {
+				@apply flex-col items-start gap-2; /* Stacks icon on top of "01" */
+			}
+		}
+
+		/* Second Column gets the left border on desktop */
+		> .wp-block-column:last-child {
+			@apply border-primary/15 border-l pl-10;
+
+			border-top: none;
+		}
+	}
 }
