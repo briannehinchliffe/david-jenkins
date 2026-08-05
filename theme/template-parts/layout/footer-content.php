@@ -47,7 +47,7 @@
 		</div>
 		<div class="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-6 md:flex-row ">
 			<p class="flex items-center gap-1 text-xs text-blue-300">
-				<?php printf( esc_html__( 'Made with %1$s by %2$s', 'david-jenkins' ), '<span class="text-accent">&hearts;</span>', '<a href="' . esc_url( 'https://briannehinchliffe.com/' ) . '" rel="home" class="hover:text-blue-300 no-underline">' . esc_html( 'Brianne Hinchliffe' ) . '</a>' ); ?>
+				<?php printf( esc_html__( 'Made with %1$s by %2$s', 'david-jenkins' ), '<span class="text-accent">&hearts;</span>', '<a href="' . esc_url( 'https://briannehinchliffe.com/' ) . '" target="_blank" class="hover:text-blue-300 no-underline">' . esc_html( 'Brianne Hinchliffe' ) . '</a>' ); ?>
 			</p>
 			<p class="text-xs text-blue-300">
 				<?php printf( esc_html__( 'Copyright &copy; %1$s %2$s', 'david-jenkins' ), esc_html( gmdate( 'Y' ) ), '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home" class="hover:text-blue-300 no-underline">' . esc_html( get_bloginfo( 'name' ) ) . '</a>' ); ?>
