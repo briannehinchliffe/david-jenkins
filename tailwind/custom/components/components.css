@@ -79,8 +79,16 @@
 
 header#masthead {
 	nav {
+		.btn-menu a {
+			@apply bg-accent rounded px-5 py-2.5 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-red-700;
+
+			&:hover {
+				@apply bg-red-700 !text-white;
+			}
+		}
+
 		a {
-			@apply hover:text-accent text-primary text-sm font-medium tracking-wide transition-colors;
+			@apply hover:text-accent text-primary text-sm font-medium tracking-wide no-underline transition-colors;
 		}
 
 		.current-menu-item a {
