@@ -37,7 +37,7 @@ Or [deploy with the tool of your choice](https://underscoretw.com/docs/deploymen
 * **Custom Palette & Fluid Typography**: Centralized in `theme.json` using primary blue (`#1B2B5E`), accent red (`#CC2028`), and light backgrounds (`#FAF8F2`).
 
 
-* **Responsive Fixed Header**: Backdrop blur, mobile toggle drawer, and custom logo handling in `header-content.php`.
+* **Responsive Fixed Header**: Backdrop blur, mobile toggle drawer, and custom logo handling in `theme/template-parts/layout/header-content.php`.
 
 
 * **Custom Block Extensions**: Utility extensions in `utilities.css` for timeline blocks (`.timeline-container`), framed campaign graphics (`.framed-image`), and priority grids (`.priority-item`).
