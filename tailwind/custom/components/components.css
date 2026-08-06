@@ -91,7 +91,7 @@ header#masthead {
 			@apply hover:text-accent text-primary text-sm font-medium tracking-wide no-underline transition-colors;
 		}
 
-		.current-menu-item a {
+		.current-menu-item:not(.btn-menu) a {
 			@apply text-accent;
 		}
 	}
