@@ -40,4 +40,4 @@ Or [deploy with the tool of your choice](https://underscoretw.com/docs/deploymen
 * **Responsive Fixed Header**: Backdrop blur, mobile toggle drawer, and custom logo handling in `theme/template-parts/layout/header-content.php`.
 
 
-* **Custom Block Extensions**: Utility extensions in `utilities.css` for timeline blocks (`.timeline-container`), framed campaign graphics (`.framed-image`), and priority grids (`.priority-item`).
+* **Custom Block Extensions**: Utility extensions in `tailwind/custom/utilities.css` for timeline blocks (`.timeline-container`), framed campaign graphics (`.framed-image`), and priority grids (`.priority-item`).
