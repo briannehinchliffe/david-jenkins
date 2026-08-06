@@ -1,7 +1,7 @@
-david-jenkins
+David Jenkins
 =============
 
-A custom theme for David Jenkins, candidate for Cheshire County Attorney
+A custom theme for David Jenkins, candidate for Cheshire County Attorney.
 
 ## Quickstart
 
@@ -10,8 +10,6 @@ A custom theme for David Jenkins, candidate for Cheshire County Attorney
 1. Move this folder to `wp-content/themes` in your local development environment
 2. Run `npm install && npm run dev` in this folder
 3. Activate this theme in your local WordPress installation
-
-Using WordPress Multisite? Don’t forget that your theme must first be enabled via the Network Admin in order to be available for activation on a network site.
 
 ### Development
 
@@ -27,37 +25,19 @@ Or [deploy with the tool of your choice](https://underscoretw.com/docs/deploymen
 
 ## Full Documentation
 
-### Fundamentals
+### Stack & Technologies
 
-* [Installation](https://underscoretw.com/docs/installation/)  
-  Generate your custom theme, install it in WordPress and run your first Tailwind builds
-* [Development](https://underscoretw.com/docs/development/)  
-  Watch for changes, build for production and learn more about how _tw, WordPress and Tailwind work together
-* [Deployment](https://underscoretw.com/docs/deployment/)  
-  Share your new WordPress theme with the world
-* [Troubleshooting](https://underscoretw.com/docs/troubleshooting/)  
-  Find solutions to potential issues and answers to frequently asked questions
+* **WordPress Core**: Theme v1.0.0 (Block/Hybrid Architecture using `theme.json` v3)
+* **CSS Framework**: [Tailwind CSS](https://tailwindcss.com/) with `@tailwindcss/typography`
+* **Build System**: `_tw` CLI scripts + `esbuild`
+* **Fonts**: Self-hosted Volkhov (serif) and Inter (sans-serif)
 
-### In Depth
+### Key Custom Styling Features
 
-* [Using Tailwind Typography](https://underscoretw.com/docs/tailwind-typography/)  
-  Customize front-end and back-end typographic styles
-* [JavaScript Bundling with esbuild](https://underscoretw.com/docs/esbuild/)  
-  Install and bundle JavaScript libraries (very quickly)
-* [Adding custom fonts](https://underscoretw.com/docs/custom-fonts/)
-  Host your fonts yourself or use a third party—and then add those fonts to your WordPress theme
-* [Linting and Code Formatting](https://underscoretw.com/docs/linting-code-formatting/)  
-  Catch bugs and stop thinking about formatting
-* [Keeping your theme up-to-date](https://underscoretw.com/docs/updating/)
-  How to update (and whether or not you should)
+* **Custom Palette & Fluid Typography**: Centralized in `theme.json` using primary blue (`#1B2B5E`), accent red (`#CC2028`), and light backgrounds (`#FAF8F2`).
 
-### Extras
 
-* [On Tailwind and WordPress](https://underscoretw.com/docs/wordpress-tailwind/)  
-  Understand how WordPress and Tailwind work together
-* [Styling HTML from outside the theme](https://underscoretw.com/docs/styling-html-from-outside-the-theme/)
-  Work with WordPress core, plugins and JavaScript libraries
-* [Managing Styles for Custom Blocks](https://underscoretw.com/docs/custom-blocks/)  
-  Learn strategies for using Tailwind in theme-specific custom blocks
-* [Setting Up Browsersync](https://underscoretw.com/docs/browsersync/)  
-  Add live reloads and synchronized cross-device testing to your workflow
+* **Responsive Fixed Header**: Backdrop blur, mobile toggle drawer, and custom logo handling in `theme/template-parts/layout/header-content.php`.
+
+
+* **Custom Block Extensions**: Utility extensions in `tailwind/custom/utilities.css` for timeline blocks (`.timeline-container`), framed campaign graphics (`.framed-image`), and priority grids (`.priority-item`).
