@@ -79,11 +79,20 @@
 
 header#masthead {
 	nav {
-		.btn-menu a {
-			@apply bg-accent rounded px-5 py-2.5 text-sm font-semibold tracking-wide text-white transition-colors duration-200;
+		@media (min-width: 780px) {
+			.btn-menu {
+				&.current-menu-item a {
+					@apply !text-white;
+				}
+				
+				a {
+					@apply bg-accent rounded px-5 py-2.5 text-sm font-semibold tracking-wide text-white transition-colors duration-200;
 
-			&:hover {
-				@apply bg-red-700 !text-white;
+					&:hover,
+					&:focus-visible {
+						@apply bg-red-700 !text-white;
+					}
+				}
 			}
 		}
 
@@ -91,7 +100,7 @@ header#masthead {
 			@apply hover:text-accent text-primary text-sm font-medium tracking-wide no-underline transition-colors;
 		}
 
-		.current-menu-item:not(.btn-menu) a {
+		.current-menu-item a {
 			@apply text-accent;
 		}
 	}
