@@ -17,13 +17,17 @@
 		&:hover {
 			@apply bg-blue-900 !text-white;
 		}
+
+		&:focus {
+			@apply outline-muted-foreground;
+		}
 	}
 
 	&.is-style-outline {
 		> .wp-block-button__link {
 			&:hover {
-				background-color: var(--wp--preset--color--primary);
-				color: var(--wp--preset--background);
+				background-color: var(--color-primary);
+				color: var(--color-background);
 			}
 		}
 	}
@@ -208,7 +212,7 @@
 		border: 2px solid
 			color-mix(
 				in srgb,
-				var(--wp--preset--color--accent) 30%,
+				var(--color-accent) 30%,
 				transparent
 			);
 		border-radius: var(--wp--preset--border-radius--large);
