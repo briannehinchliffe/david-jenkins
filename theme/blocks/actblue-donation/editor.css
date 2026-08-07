@@ -1,0 +1,8 @@
+.actblue-donation-widget,
+.actblue-donation-widget * {
+	box-sizing: border-box;
+}
+
+.actblue-donation-widget .donate-action-btn {
+	color: white;
+}

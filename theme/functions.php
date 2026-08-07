@@ -251,6 +251,15 @@ function david_jenkins_register_block_styles() {
 add_action( 'init', 'david_jenkins_register_block_styles' );
 
 /**
+ * Register a custom ActBlue Donations block.
+ *
+ * @return void
+ */
+add_action( 'init', function() {
+	register_block_type( __DIR__ . '/blocks/actblue-donation' );
+} );
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
