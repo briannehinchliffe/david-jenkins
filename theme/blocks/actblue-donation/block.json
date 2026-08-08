@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "david-jenkins/actblue-donation",
+	"title": "ActBlue Donation Form",
+	"category": "widgets",
+	"icon": "heart",
+	"supports": {
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"actblueUrl": {
+			"type": "string",
+			"default": "https://secure.actblue.com/donate/jenkins4cheshirecountyattorney"
+		},
+		"disclaimerText": {
+			"type": "string",
+			"default": "You will be redirected to ActBlue's secure donation page. Paid for by the David Jenkins for County Attorney Committee."
+		}
+	},
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js",
+	"editorScript": "file:./editor.js",
+	"editorStyle": "file:./editor.css"
+}

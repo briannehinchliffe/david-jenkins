@@ -52,43 +52,40 @@ body {
 
 /* Ensure theme.json element settings override Tailwind Preflight resets */
 h1 {
-	font-family: var(--wp--preset--font-family--primary);
+	font-family: var(--font-serif);
 	font-size: var(--wp--preset--font-size--xxxx-large);
 	line-height: 1.1;
 }
 
 h2 {
-	font-family: var(--wp--preset--font-family--primary);
 	font-size: var(--wp--preset--font-size--x-large);
 	line-height: 1.3;
 }
 
 h3 {
-	font-family: var(--wp--preset--font-family--primary);
 	font-size: var(--wp--preset--font-size--large);
 	line-height: 1.5;
 }
 
 h4 {
-	font-family: var(--wp--preset--font-family--primary);
 	font-size: var(--wp--preset--font-size--medium);
 	line-height: 1.5;
 }
 
 h5 {
-	font-family: var(--wp--preset--font-family--secondary);
+	font-family: var(--font-sans);
 	font-size: var(--wp--preset--font-size--medium);
 	line-height: 1.5;
 }
 
 h6 {
-	font-family: var(--wp--preset--font-family--secondary);
+	font-family: var(--font-sans);
 	font-size: var(--wp--preset--font-size--small);
 	line-height: 1.4;
 }
 
 cite {
-	font-family: var(--wp--preset--font-family--secondary);
+	font-family: var(--font-sans);
 	font-size: var(--wp--preset--font-size--medium);
 	font-style: normal;
 	font-weight: normal;

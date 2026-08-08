@@ -88,7 +88,8 @@ header#masthead {
 				a {
 					@apply bg-accent rounded px-5 py-2.5 text-sm font-semibold tracking-wide text-white transition-colors duration-200;
 
-					&:hover {
+					&:hover,
+					&:focus-visible {
 						@apply bg-red-700 !text-white;
 					}
 				}
@@ -118,7 +119,7 @@ header#masthead {
 }
 
 #content {
-	@apply pt-24 md:pt-30;
+	@apply pt-24 lg:pt-30;
 }
 
 /**
