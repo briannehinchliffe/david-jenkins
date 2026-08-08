@@ -1,6 +1,46 @@
 /**
  * Custom styles to immediately follow Tailwind’s `base` layer
  */
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex="0"]:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+	border-radius: 0.25rem;
+}
+
+:focus:not(:focus-visible) {
+	outline: none !important;
+}
+
+::selection {
+	background-color: var(--color-accent, #cc2028);
+	color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	::before,
+	::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 2rem;
+}
 
 /**
  * This uses the background and primary colors declared in the `theme.json`
