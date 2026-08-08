@@ -17,3 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   * `.wp-block-button` custom hover state variations (`is-style-fill-red`, `is-style-fill-white`, and `.btn-facebook`).
   * Custom media layouts: `.stagger-gallery`, `.framed-image`, and `.gradient-caption` image overlays.
   * Interactive components: `.featured-link` animated chevron indicator, `.timeline-container` vertical connector lines, and `.priority-item` grid column layouts.
+- **ActBlue Donation Block**: Created custom dynamic block with preset amount selection ($10, $25, $50, $100, $250, $500) and custom input support.
+- **Editor Canvas Selection Support**: Registered `editor.js` wrapper utilizing `useBlockProps` and `<Disabled>` to allow seamless block selection and movement within nested column layouts in the Gutenberg editor.
+- **Accessibility Enhancements**:
+	- Implemented sitewide dual-ring focus indicators (`outline` + `box-shadow`) to maintain WCAG 2.2 focus contrast across solid background blocks (`.bg-accent`, `.bg-primary`).

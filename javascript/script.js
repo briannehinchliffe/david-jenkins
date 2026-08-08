@@ -18,6 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	const menuIcon = toggleButton.querySelector('.menu-icon');
 	const closeIcon = toggleButton.querySelector('.close-icon');
 
+	const closeMenu = () => {
+		toggleButton.setAttribute('aria-expanded', 'false');
+		mobileMenu.classList.add('hidden');
+		menuIcon.classList.replace('hidden', 'block');
+		closeIcon.classList.replace('block', 'hidden');
+		toggleButton.focus();
+	};
+
 	toggleButton.addEventListener('click', () => {
 		// Check current status
 		const isExpanded =
@@ -38,6 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			// Menu opened: hide burger, show X
 			menuIcon.classList.replace('block', 'hidden');
 			closeIcon.classList.replace('hidden', 'block');
+		}
+	});
+
+	document.addEventListener('keydown', (e) => {
+		if (
+			e.key === 'Escape' &&
+			toggleButton.getAttribute('aria-expanded') === 'true'
+		) {
+			closeMenu();
 		}
 	});
 });
