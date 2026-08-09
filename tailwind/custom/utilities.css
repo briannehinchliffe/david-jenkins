@@ -246,11 +246,7 @@
 		right: 10px;
 		bottom: 10px;
 		border: 2px solid
-			color-mix(
-				in srgb,
-				var(--color-accent) 30%,
-				transparent
-			);
+			color-mix(in srgb, var(--color-accent) 30%, transparent);
 		border-radius: var(--wp--preset--border-radius--large);
 		z-index: 0;
 		pointer-events: none;
@@ -380,18 +376,18 @@
 }
 
 .pagination .nav-links {
-	@apply flex items-center justify-center gap-2 mt-10;
+	@apply mt-10 flex items-center justify-center gap-2;
 }
 .pagination .page-numbers {
-	@apply inline-flex items-center justify-center rounded-lg border border-primary/15 px-3 py-2 text-sm font-medium text-primary no-underline transition-colors;
+	@apply border-primary/15 text-primary inline-flex items-center justify-center rounded-lg border px-3 py-2 text-sm font-medium no-underline transition-colors;
 }
 .pagination .page-numbers:hover {
 	@apply border-accent text-accent;
 }
 .pagination .page-numbers.current {
-	@apply bg-accent text-white border-accent;
+	@apply bg-accent border-accent text-white;
 }
 
 .result-card-thumb img {
-	@apply w-full h-full object-cover;
+	@apply h-full w-full object-cover;
 }
