@@ -37,7 +37,7 @@
 			<?php david_jenkins_entry_meta(); ?>
 		</div><!-- .entry-meta -->
 
-		<div class="result-card-excerpt text-foreground text-sm">
+		<div class="result-card-excerpt text-sm text-foreground">
 			<?php the_excerpt(); ?>
 		</div><!-- .result-card-excerpt -->
 
