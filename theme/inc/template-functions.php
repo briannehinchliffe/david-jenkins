@@ -51,14 +51,14 @@ function david_jenkins_get_the_archive_title() {
 	} elseif ( is_post_type_archive() ) {
 		$cpt   = get_post_type_object( get_queried_object()->name );
 		$title = sprintf(
-			/* translators: %s: Post type singular name */
+		/* translators: %s: Post type singular name */
 			esc_html__( '%s Archives', 'david-jenkins' ),
 			$cpt->labels->singular_name
 		);
 	} elseif ( is_tax() ) {
 		$tax   = get_taxonomy( get_queried_object()->taxonomy );
 		$title = sprintf(
-			/* translators: %s: Taxonomy singular name */
+		/* translators: %s: Taxonomy singular name */
 			esc_html__( '%s Archives', 'david-jenkins' ),
 			$tax->labels->singular_name
 		);
@@ -92,7 +92,7 @@ function david_jenkins_continue_reading_link( $more_string ) {
 
 	if ( ! is_admin() ) {
 		$continue_reading = sprintf(
-			/* translators: %s: Name of current post. */
+		/* translators: %s: Name of current post. */
 			wp_kses( __( 'Continue reading %s', 'david-jenkins' ), array( 'span' => array( 'class' => array() ) ) ),
 			the_title( '<span class="sr-only">"', '"</span>', false )
 		);
@@ -103,8 +103,19 @@ function david_jenkins_continue_reading_link( $more_string ) {
 	return $more_string;
 }
 
-// Filter the excerpt more link.
-add_filter( 'excerpt_more', 'david_jenkins_continue_reading_link' );
+/**
+ * Trim the excerpt's "more" indicator to a plain ellipsis.
+ *
+ * content-excerpt.php already renders its own "Read more" link below the
+ * excerpt, so appending a second "Continue reading" link here would be
+ * redundant.
+ */
+function david_jenkins_excerpt_more( $more_string ) {
+	return is_admin() ? $more_string : '&hellip;';
+}
+
+// Filter the excerpt more string (plain ellipsis; card template supplies its own CTA).
+add_filter( 'excerpt_more', 'david_jenkins_excerpt_more' );
 
 // Filter the content more link.
 add_filter( 'the_content_more_link', 'david_jenkins_continue_reading_link' );
@@ -133,74 +144,74 @@ function david_jenkins_html5_comment( $comment, $args, $depth ) {
 	}
 	?>
 	<<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $comment->has_children ? 'parent' : '', $comment ); ?>>
-		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-			<footer class="comment-meta">
-				<div class="comment-author vcard">
-					<?php
-					if ( 0 !== $args['avatar_size'] ) {
-						echo get_avatar( $comment, $args['avatar_size'] );
-					}
-					?>
-					<?php
-					$comment_author = get_comment_author_link( $comment );
+	<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+		<footer class="comment-meta">
+			<div class="comment-author vcard">
+				<?php
+				if ( 0 !== $args['avatar_size'] ) {
+					echo get_avatar( $comment, $args['avatar_size'] );
+				}
+				?>
+				<?php
+				$comment_author = get_comment_author_link( $comment );
 
-					if ( '0' === $comment->comment_approved && ! $show_pending_links ) {
-						$comment_author = get_comment_author( $comment );
-					}
+				if ( '0' === $comment->comment_approved && ! $show_pending_links ) {
+					$comment_author = get_comment_author( $comment );
+				}
 
-					printf(
-						/* translators: %s: Comment author link. */
-						wp_kses_post( __( '%s <span class="says">says:</span>', 'david-jenkins' ) ),
-						sprintf( '<b class="fn">%s</b>', wp_kses_post( $comment_author ) )
-					);
-					?>
-				</div><!-- .comment-author -->
+				printf(
+				/* translators: %s: Comment author link. */
+					wp_kses_post( __( '%s <span class="says">says:</span>', 'david-jenkins' ) ),
+					sprintf( '<b class="fn">%s</b>', wp_kses_post( $comment_author ) )
+				);
+				?>
+			</div><!-- .comment-author -->
 
-				<div class="comment-metadata">
-					<?php
-					printf(
-						'<a href="%s"><time datetime="%s">%s</time></a>',
-						esc_url( get_comment_link( $comment, $args ) ),
-						esc_attr( get_comment_time( 'c' ) ),
-						esc_html(
-							sprintf(
-							/* translators: 1: Comment date, 2: Comment time. */
-								__( '%1$s at %2$s', 'david-jenkins' ),
-								get_comment_date( '', $comment ),
-								get_comment_time()
-							)
-						)
-					);
-
-					edit_comment_link( __( 'Edit', 'david-jenkins' ), ' <span class="edit-link">', '</span>' );
-					?>
-				</div><!-- .comment-metadata -->
-
-				<?php if ( '0' === $comment->comment_approved ) : ?>
-				<em class="comment-awaiting-moderation"><?php echo esc_html( $moderation_note ); ?></em>
-				<?php endif; ?>
-			</footer><!-- .comment-meta -->
-
-			<div <?php david_jenkins_content_class( 'comment-content' ); ?>>
-				<?php comment_text(); ?>
-			</div><!-- .comment-content -->
-
-			<?php
-			if ( '1' === $comment->comment_approved || $show_pending_links ) {
-				comment_reply_link(
-					array_merge(
-						$args,
-						array(
-							'add_below' => 'div-comment',
-							'depth'     => $depth,
-							'max_depth' => $args['max_depth'],
-							'before'    => '<div class="reply">',
-							'after'     => '</div>',
+			<div class="comment-metadata">
+				<?php
+				printf(
+					'<a href="%s"><time datetime="%s">%s</time></a>',
+					esc_url( get_comment_link( $comment, $args ) ),
+					esc_attr( get_comment_time( 'c' ) ),
+					esc_html(
+						sprintf(
+						/* translators: 1: Comment date, 2: Comment time. */
+							__( '%1$s at %2$s', 'david-jenkins' ),
+							get_comment_date( '', $comment ),
+							get_comment_time()
 						)
 					)
 				);
-			}
-			?>
-		</article><!-- .comment-body -->
+
+				edit_comment_link( __( 'Edit', 'david-jenkins' ), ' <span class="edit-link">', '</span>' );
+				?>
+			</div><!-- .comment-metadata -->
+
+			<?php if ( '0' === $comment->comment_approved ) : ?>
+				<em class="comment-awaiting-moderation"><?php echo esc_html( $moderation_note ); ?></em>
+			<?php endif; ?>
+		</footer><!-- .comment-meta -->
+
+		<div <?php david_jenkins_content_class( 'comment-content' ); ?>>
+			<?php comment_text(); ?>
+		</div><!-- .comment-content -->
+
+		<?php
+		if ( '1' === $comment->comment_approved || $show_pending_links ) {
+			comment_reply_link(
+				array_merge(
+					$args,
+					array(
+						'add_below' => 'div-comment',
+						'depth'     => $depth,
+						'max_depth' => $args['max_depth'],
+						'before'    => '<div class="reply">',
+						'after'     => '</div>',
+					)
+				)
+			);
+		}
+		?>
+	</article><!-- .comment-body -->
 	<?php
 }
