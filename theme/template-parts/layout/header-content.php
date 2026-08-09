@@ -11,7 +11,7 @@
 
 <header id="masthead" class="fixed top-0 right-0 left-0 z-50 bg-white/97 backdrop-blur-sm transition-all duration-300">
 	<div class="mx-auto max-w-content px-5 lg:px-10">
-		<div class="flex h-20 items-center justify-between lg:h-30">
+		<div class="flex h-20 items-center justify-between md:h-30">
 			<?php
 			the_custom_logo();
 
@@ -31,7 +31,7 @@
 				</p>
 			<?php endif; ?>
 			<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
-				<nav class="hidden items-center gap-8 lg:flex" aria-label="<?php esc_attr_e( 'Primary Menu', 'david-jenkins' ); ?>">
+				<nav class="hidden items-center gap-8 md:flex" aria-label="<?php esc_attr_e( 'Primary Menu', 'david-jenkins' ); ?>">
 					<?php
 					wp_nav_menu(
 						array(
@@ -47,7 +47,7 @@
 				</nav>
 
 				<!-- Mobile Menu Toggle Button -->
-				<button id="menu-toggle" class="p-2 text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-white lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="<?php echo esc_attr__( 'Toggle menu', 'david-jenkins' ); ?>">
+				<button id="menu-toggle" class="p-2 text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-white md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="<?php echo esc_attr__( 'Toggle menu', 'david-jenkins' ); ?>">
 					<!-- Hamburger Icon (Visible by default) -->
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu menu-icon block"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
 					<!-- Close X Icon (Hidden by default) -->
@@ -59,7 +59,7 @@
 
 	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 		<!-- Mobile Menu Panel (Hidden by default) -->
-		<nav id="mobile-menu" class="border-border hidden border-t bg-white lg:hidden" aria-label="<?php esc_attr_e( 'Primary Menu', 'david-jenkins' ); ?>">
+		<nav id="mobile-menu" class="border-border hidden border-t bg-white md:hidden" aria-label="<?php esc_attr_e( 'Primary Menu', 'david-jenkins' ); ?>">
 			<?php
 			wp_nav_menu(
 				array(

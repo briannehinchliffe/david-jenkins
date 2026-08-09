@@ -84,7 +84,7 @@ header#masthead {
 				&.current-menu-item a {
 					@apply !text-white;
 				}
-				
+
 				a {
 					@apply bg-accent rounded px-5 py-2.5 text-sm font-semibold tracking-wide text-white transition-colors duration-200;
 

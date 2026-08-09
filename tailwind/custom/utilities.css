@@ -7,6 +7,42 @@
  * https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities
  */
 
+.screen-reader-text {
+	@apply sr-only;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+.sr-only:focus,
+.sr-only:focus-visible {
+	position: fixed;
+	top: 1rem;
+	left: 1rem;
+	z-index: 9999;
+	width: auto;
+	height: auto;
+	padding: 0.75rem 1.25rem;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+	white-space: normal;
+	background-color: var(--color-primary, #1b2b5e);
+	color: #ffffff;
+	border-radius: 0.5rem;
+	font-weight: 600;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
 /**
  * Button Hover styles.
  */
@@ -210,11 +246,7 @@
 		right: 10px;
 		bottom: 10px;
 		border: 2px solid
-			color-mix(
-				in srgb,
-				var(--color-accent) 30%,
-				transparent
-			);
+			color-mix(in srgb, var(--color-accent) 30%, transparent);
 		border-radius: var(--wp--preset--border-radius--large);
 		z-index: 0;
 		pointer-events: none;
@@ -341,4 +373,21 @@
 			border-top: none;
 		}
 	}
+}
+
+.pagination .nav-links {
+	@apply mt-10 flex items-center justify-center gap-2;
+}
+.pagination .page-numbers {
+	@apply border-primary/15 text-primary inline-flex items-center justify-center rounded-lg border px-3 py-2 text-sm font-medium no-underline transition-colors;
+}
+.pagination .page-numbers:hover {
+	@apply border-accent text-accent;
+}
+.pagination .page-numbers.current {
+	@apply bg-accent border-accent text-white;
+}
+
+.result-card-thumb img {
+	@apply h-full w-full object-cover;
 }
