@@ -37,9 +37,9 @@
 			<?php david_jenkins_entry_meta(); ?>
 		</div><!-- .entry-meta -->
 
-		<div <?php david_jenkins_content_class( 'entry-content result-card-excerpt text-foreground' ); ?>>
+		<div class="result-card-excerpt text-foreground text-sm">
 			<?php the_excerpt(); ?>
-		</div><!-- .entry-content -->
+		</div><!-- .result-card-excerpt -->
 
 		<footer class="entry-footer mt-3">
 			<a class="featured-link text-accent no-underline" href="<?php the_permalink(); ?>">
