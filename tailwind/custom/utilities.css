@@ -308,18 +308,22 @@
 	> .wp-block-column:first-child {
 		position: relative;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 
-		&::before {
-			content: "";
-			position: absolute;
-			top: 1.25rem;
-			bottom: -2.5rem;
-			left: 50%;
-			width: 1px;
-			transform: translateX(-50%);
-			@apply bg-slate-300;
-			z-index: 0;
+		@media screen and (min-width: 780px) {
+			justify-content: center;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 1.25rem;
+				bottom: -2.5rem;
+				left: 50%;
+				width: 1px;
+				transform: translateX(-50%);
+				@apply bg-slate-300;
+				z-index: 0;
+			}
 		}
 	}
 
