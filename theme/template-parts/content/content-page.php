@@ -18,9 +18,7 @@
 		endif;
 		?>
 	</header><!-- .entry-header -->
-
-	<?php david_jenkins_post_thumbnail(); ?>
-
+	
 	<div <?php david_jenkins_content_class( 'entry-content' ); ?>>
 		<?php
 		the_content();
