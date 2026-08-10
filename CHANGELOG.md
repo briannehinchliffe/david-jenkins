@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-08-10
+
+### Removed
+* `david_jenkins_post_thumbnail();` from `theme/template-parts/content/content-page.php`.
+
+## [1.0.0] - 2026-08-10
+
 ### Added
 * `theme/searchform.php` — dedicated, styled search form template (previously fell back to WordPress core's unstyled default markup wherever `get_search_form()` was called).
 * Result count summary ("N results found") on the search results header in `theme/search.php`.
