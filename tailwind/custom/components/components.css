@@ -119,7 +119,7 @@ header#masthead {
 }
 
 #content {
-	@apply pt-24 lg:pt-30;
+	@apply max-[767px]:pt-20 md:pt-30;
 }
 
 /**
