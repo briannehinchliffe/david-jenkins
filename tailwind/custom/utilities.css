@@ -186,7 +186,7 @@
 }
 
 .col-grid-priorities {
-	@media screen and (min-width: 780px) and (max-width: 1014px) {
+	@media screen and (min-width: 780px) and (max-width: 1180px) {
 		display: grid !important;
 		grid-template-columns: 1fr 1fr;
 	}

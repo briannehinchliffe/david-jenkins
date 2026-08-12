@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+
+## [1.0.3] - 2026-08-12
+
+### Changed
+* Large breakpoint for `.col-grid-priorities` to 1180px as that's when text break gets funky (not in a good way).
+
+
 ## [1.0.3] - 2026-08-10
 
 ### Added
