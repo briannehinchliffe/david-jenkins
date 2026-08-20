@@ -6,8 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [1.0.5] - 2026-08-12
 
-## [1.0.3] - 2026-08-12
+### Added
+* `font-display: swap` property on the `@font-face` declaration for the `Volkhov` and `Inter` fonts in `tailwind/custom/fonts.css`.
+
+## [1.0.4] - 2026-08-12
 
 ### Changed
 * Large breakpoint for `.col-grid-priorities` to 1180px as that's when text break gets funky (not in a good way).
