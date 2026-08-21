@@ -6,7 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-## [1.0.5] - 2026-08-12
+## [1.0.6] - 2026-08-20
+
+### Added
+* Filter to fix oversized srcset selection in `.stagger-gallery` blocks.
+
+## [1.0.5] - 2026-08-20
 
 ### Added
 * `font-display: swap` property on the `@font-face` declaration for the `Volkhov` and `Inter` fonts in `tailwind/custom/fonts.css`.

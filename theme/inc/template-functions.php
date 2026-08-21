@@ -215,3 +215,19 @@ function david_jenkins_html5_comment( $comment, $args, $depth ) {
 	</article><!-- .comment-body -->
 	<?php
 }
+
+/**
+ * Fix oversized srcset selection in .stagger-gallery blocks — CSS grid
+ * renders images at ~50% width but Gutenberg's `sizes` doesn't know that.
+ */
+add_filter('render_block', function(string $block_content, array $block): string {
+	if (!str_contains($block_content, 'stagger-gallery')) {
+		return $block_content;
+	}
+
+	return preg_replace(
+		'/sizes="[^"]*"/',
+		'sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 384px"',
+		$block_content
+	);
+}, 10, 2);
